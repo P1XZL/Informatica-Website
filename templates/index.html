@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="nl">
+     <head>
+           <title>Home</title>
+           <meta charset="utf-8">
+           <meta name="viewport" content="width=device-width, initial-scale=1.0">
+           <link rel="preconnect" href="https://fonts.googleapis.com">
+           <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+           <link href="https://fonts.googleapis.com/css2?family=Doto:wght@100..900&display=swap" rel="stylesheet">
+           <link rel="stylesheet" href="{{ url_for('static', filename='css/opmaak.css') }}">
+           <script src="{{ url_for('static', filename='js/navbar.js') }}" defer></script>
+         
+     </head>
+     <body>
+         <nav class="navbar">
+             <div class="nav-container">
+                 <div class="nav-logo">
+                     <img src="{{ url_for('static', filename='img/logo.png') }}" alt="Logo">
+                 </div>
+                 <div class="nav-links">
+                     <div class="nav-tile active"><a href="/">Home</a></div>
+                     <div class="nav-tile"><a href="/mods">Mods</a></div>
+                     <div class="nav-tile"><a href="/gallery">Gallery</a></div>
+                     <div class="nav-tile"><a href="/textures">Textures</a></div>
+                     <div class="nav-tile"><a href="/worlds">Worlds</a></div>
+                 </div>
+                 <div class="hamburger-menu">
+                     <span></span>
+                     <span></span>
+                     <span></span>
+                 </div>
+             </div>
+             <div class="mobile-menu">
+                 <div class="nav-tile active"><a href="/">Home</a></div>
+                 <div class="nav-tile"><a href="/mods">Mods</a></div>
+                 <div class="nav-tile"><a href="/gallery">Gallery</a></div>
+                 <div class="nav-tile"><a href="/textures">Textures</a></div>
+                 <div class="nav-tile"><a href="/worlds">Worlds</a></div>
+             </div>
+         </nav>
+     </body>
+
+    
+</html>
