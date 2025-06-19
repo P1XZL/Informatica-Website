@@ -1,43 +1,193 @@
 <!DOCTYPE html>
 <html lang="nl">
-     <head>
-           <title>Gallery</title>
-           <meta charset="utf-8">
-           <meta name="viewport" content="width=device-width, initial-scale=1.0">
-           <link rel="preconnect" href="https://fonts.googleapis.com">
-           <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-           <link href="https://fonts.googleapis.com/css2?family=Doto:wght@100..900&display=swap" rel="stylesheet">
-           <link rel="stylesheet" href="{{ url_for('static', filename='css/opmaak.css') }}">
-           <script src="{{ url_for('static', filename='js/navbar.js') }}" defer></script>
-     </head>
-     <body>
-         <nav class="navbar">
-             <div class="nav-container">
-                 <div class="nav-logo">
-                     <img src="{{ url_for('static', filename='img/logo.png') }}" alt="Logo">
-                 </div>
-                 <div class="nav-links">
-                     <div class="nav-tile"><a href="/">Home</a></div>
-                     <div class="nav-tile"><a href="/mods">Mods</a></div>
-                     <div class="nav-tile active"><a href="/gallery">Gallery</a></div>
-                     <div class="nav-tile"><a href="/textures">Textures</a></div>
-                     <div class="nav-tile"><a href="/worlds">Worlds</a></div>
-                 </div>
-                 <div class="hamburger-menu">
-                     <span></span>
-                     <span></span>
-                     <span></span>
-                 </div>
-             </div>
-             <div class="mobile-menu">
-                 <div class="nav-tile"><a href="/">Home</a></div>
-                 <div class="nav-tile"><a href="/mods">Mods</a></div>
-                 <div class="nav-tile active"><a href="/gallery">Gallery</a></div>
-                 <div class="nav-tile"><a href="/textures">Textures</a></div>
-                 <div class="nav-tile"><a href="/worlds">Worlds</a></div>
-             </div>
-         </nav>
+<head>
+    <title>Gallery - MineCraft Hub</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Doto:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/opmaak.css') }}">
+    <script src="{{ url_for('static', filename='js/navbar.js') }}" defer></script>
+    <script src="{{ url_for('static', filename='js/gallery.js') }}" defer></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="{{ url_for('static', filename='img/logo.png') }}" alt="Logo">
+            </div>
+            <div class="nav-links">
+                <div class="nav-tile"><a href="/">Home</a></div>
+                <div class="nav-tile"><a href="/mods">Mods</a></div>
+                <div class="nav-tile"><a href="/textures">Textures</a></div>
+                <div class="nav-tile"><a href="/worlds">Worlds</a></div>
+                <div class="nav-tile"><a href="/shaders">Shaders</a></div>
+                <div class="nav-tile active"><a href="/gallery">Gallery</a></div>
+                <div class="nav-tile"><a href="/guides">Guides</a></div>
+                <div class="nav-tile"><a href="/upload">Upload</a></div>
+            </div>
+            <div class="hamburger-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        <div class="mobile-menu">
+            <div class="nav-tile"><a href="/">Home</a></div>
+            <div class="nav-tile"><a href="/mods">Mods</a></div>
+            <div class="nav-tile"><a href="/textures">Textures</a></div>
+            <div class="nav-tile"><a href="/worlds">Worlds</a></div>
+            <div class="nav-tile"><a href="/shaders">Shaders</a></div>
+            <div class="nav-tile active"><a href="/gallery">Gallery</a></div>
+            <div class="nav-tile"><a href="/guides">Guides</a></div>
+            <div class="nav-tile"><a href="/upload">Upload</a></div>
+        </div>
+    </nav>
 
-          
-     </body>
+    <div class="main-content">
+        <div class="section-header">
+            <h1 class="section-title">📸 Community Gallery</h1>
+            <p class="section-subtitle">
+                Showcase your amazing Minecraft creations! Browse stunning screenshots, builds, 
+                and artistic captures from our talented community.
+            </p>
+        </div>
+
+        <!-- Filter Section -->
+        <div class="filter-section">
+            <div class="filter-title">Browse by Category:</div>
+            <div class="filter-buttons">
+                <button class="filter-btn active">All Images</button>
+                <button class="filter-btn">Builds</button>
+                <button class="filter-btn">Landscapes</button>
+                <button class="filter-btn">Interiors</button>
+                <button class="filter-btn">Redstone</button>
+                <button class="filter-btn">Art</button>
+                <button class="filter-btn">Screenshots</button>
+            </div>
+        </div>
+
+        <!-- Gallery Grid -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; margin-top: 30px;">
+            <!-- Sample Gallery Items -->
+            <div class="mod-card" style="cursor: pointer;" onclick="openImageModal('https://images.pexels.com/photos/1029604/pexels-photo-1029604.jpeg?auto=compress&cs=tinysrgb&w=800')">
+                <img src="https://images.pexels.com/photos/1029604/pexels-photo-1029604.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Epic Castle Build" class="mod-card-image">
+                <div class="mod-card-content">
+                    <h3 class="mod-card-title">Epic Medieval Castle</h3>
+                    <p class="mod-card-author">by BuildMaster2024</p>
+                    <p class="mod-card-description">Massive medieval castle with detailed interiors and surrounding village</p>
+                    <div class="mod-card-stats">
+                        <span class="mod-downloads">❤️ 1.2K likes</span>
+                        <span class="mod-version">Build</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mod-card" style="cursor: pointer;" onclick="openImageModal('https://images.pexels.com/photos/442576/pexels-photo-442576.jpeg?auto=compress&cs=tinysrgb&w=800')">
+                <img src="https://images.pexels.com/photos/442576/pexels-photo-442576.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Modern City" class="mod-card-image">
+                <div class="mod-card-content">
+                    <h3 class="mod-card-title">Futuristic Cityscape</h3>
+                    <p class="mod-card-author">by UrbanArchitect</p>
+                    <p class="mod-card-description">Modern city with skyscrapers, roads, and detailed urban planning</p>
+                    <div class="mod-card-stats">
+                        <span class="mod-downloads">❤️ 856 likes</span>
+                        <span class="mod-version">Build</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mod-card" style="cursor: pointer;" onclick="openImageModal('https://images.pexels.com/photos/163064/play-stone-network-networked-interactive-163064.jpeg?auto=compress&cs=tinysrgb&w=800')">
+                <img src="https://images.pexels.com/photos/163064/play-stone-network-networked-interactive-163064.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Redstone Machine" class="mod-card-image">
+                <div class="mod-card-content">
+                    <h3 class="mod-card-title">Complex Redstone Computer</h3>
+                    <p class="mod-card-author">by RedstoneGenius</p>
+                    <p class="mod-card-description">Fully functional calculator built entirely with redstone circuits</p>
+                    <div class="mod-card-stats">
+                        <span class="mod-downloads">❤️ 2.1K likes</span>
+                        <span class="mod-version">Redstone</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mod-card" style="cursor: pointer;" onclick="openImageModal('https://images.pexels.com/photos/1029604/pexels-photo-1029604.jpeg?auto=compress&cs=tinysrgb&w=800')">
+                <img src="https://images.pexels.com/photos/1029604/pexels-photo-1029604.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Natural Landscape" class="mod-card-image">
+                <div class="mod-card-content">
+                    <h3 class="mod-card-title">Serene Mountain Lake</h3>
+                    <p class="mod-card-author">by NatureLover</p>
+                    <p class="mod-card-description">Beautiful natural landscape with custom terrain and water features</p>
+                    <div class="mod-card-stats">
+                        <span class="mod-downloads">❤️ 743 likes</span>
+                        <span class="mod-version">Landscape</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mod-card" style="cursor: pointer;" onclick="openImageModal('https://images.pexels.com/photos/442576/pexels-photo-442576.jpeg?auto=compress&cs=tinysrgb&w=800')">
+                <img src="https://images.pexels.com/photos/442576/pexels-photo-442576.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Interior Design" class="mod-card-image">
+                <div class="mod-card-content">
+                    <h3 class="mod-card-title">Cozy Library Interior</h3>
+                    <p class="mod-card-author">by InteriorDesigner</p>
+                    <p class="mod-card-description">Detailed library with custom furniture and atmospheric lighting</p>
+                    <div class="mod-card-stats">
+                        <span class="mod-downloads">❤️ 567 likes</span>
+                        <span class="mod-version">Interior</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mod-card" style="cursor: pointer;" onclick="openImageModal('https://images.pexels.com/photos/163064/play-stone-network-networked-interactive-163064.jpeg?auto=compress&cs=tinysrgb&w=800')">
+                <img src="https://images.pexels.com/photos/163064/play-stone-network-networked-interactive-163064.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Pixel Art" class="mod-card-image">
+                <div class="mod-card-content">
+                    <h3 class="mod-card-title">Giant Pixel Art Mural</h3>
+                    <p class="mod-card-author">by PixelArtist</p>
+                    <p class="mod-card-description">Massive pixel art recreation of famous painting using colored blocks</p>
+                    <div class="mod-card-stats">
+                        <span class="mod-downloads">❤️ 1.8K likes</span>
+                        <span class="mod-version">Art</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Upload Section -->
+        <section class="featured-section">
+            <div class="hero-section" style="text-align: center;">
+                <h2 class="featured-title">📤 Share Your Screenshots</h2>
+                <p style="color: rgba(255, 255, 255, 0.8); font-size: 1.1rem; margin-bottom: 30px;">
+                    Show off your amazing builds, landscapes, and creative projects to the community!
+                </p>
+                <a href="/upload" class="upload-btn">Upload Your Images →</a>
+            </div>
+        </section>
+    </div>
+
+    <!-- Image Modal -->
+    <div id="imageModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.9); z-index: 2000; cursor: pointer;" onclick="closeImageModal()">
+        <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); max-width: 90%; max-height: 90%;">
+            <img id="modalImage" src="" alt="" style="max-width: 100%; max-height: 100%; border-radius: 12px; box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);">
+        </div>
+        <button onclick="closeImageModal()" style="position: absolute; top: 20px; right: 20px; background: rgba(255, 255, 255, 0.2); border: none; color: white; font-size: 24px; padding: 10px 15px; border-radius: 50%; cursor: pointer;">×</button>
+    </div>
+
+    <script>
+        function openImageModal(imageSrc) {
+            document.getElementById('modalImage').src = imageSrc;
+            document.getElementById('imageModal').style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeImageModal() {
+            document.getElementById('imageModal').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeImageModal();
+            }
+        });
+    </script>
+</body>
 </html>

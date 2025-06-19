@@ -1,44 +1,159 @@
 <!DOCTYPE html>
 <html lang="nl">
-     <head>
-           <title>Home</title>
-           <meta charset="utf-8">
-           <meta name="viewport" content="width=device-width, initial-scale=1.0">
-           <link rel="preconnect" href="https://fonts.googleapis.com">
-           <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-           <link href="https://fonts.googleapis.com/css2?family=Doto:wght@100..900&display=swap" rel="stylesheet">
-           <link rel="stylesheet" href="{{ url_for('static', filename='css/opmaak.css') }}">
-           <script src="{{ url_for('static', filename='js/navbar.js') }}" defer></script>
-         
-     </head>
-     <body>
-         <nav class="navbar">
-             <div class="nav-container">
-                 <div class="nav-logo">
-                     <img src="{{ url_for('static', filename='img/logo.png') }}" alt="Logo">
-                 </div>
-                 <div class="nav-links">
-                     <div class="nav-tile active"><a href="/">Home</a></div>
-                     <div class="nav-tile"><a href="/mods">Mods</a></div>
-                     <div class="nav-tile"><a href="/gallery">Gallery</a></div>
-                     <div class="nav-tile"><a href="/textures">Textures</a></div>
-                     <div class="nav-tile"><a href="/worlds">Worlds</a></div>
-                 </div>
-                 <div class="hamburger-menu">
-                     <span></span>
-                     <span></span>
-                     <span></span>
-                 </div>
-             </div>
-             <div class="mobile-menu">
-                 <div class="nav-tile active"><a href="/">Home</a></div>
-                 <div class="nav-tile"><a href="/mods">Mods</a></div>
-                 <div class="nav-tile"><a href="/gallery">Gallery</a></div>
-                 <div class="nav-tile"><a href="/textures">Textures</a></div>
-                 <div class="nav-tile"><a href="/worlds">Worlds</a></div>
-             </div>
-         </nav>
-     </body>
+<head>
+    <title>MineCraft Hub - Your Ultimate Minecraft Resource Platform</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Discover, download, and share Minecraft mods, texture packs, worlds, shaders, and more. The ultimate alternative to Modrinth.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Doto:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/opmaak.css') }}">
+    <script src="{{ url_for('static', filename='js/navbar.js') }}" defer></script>
+    <script src="{{ url_for('static', filename='js/search.js') }}" defer></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="{{ url_for('static', filename='img/logo.png') }}" alt="MineCraft Hub Logo">
+            </div>
+            <div class="nav-links">
+                <div class="nav-tile active"><a href="/">Home</a></div>
+                <div class="nav-tile"><a href="/mods">Mods</a></div>
+                <div class="nav-tile"><a href="/textures">Textures</a></div>
+                <div class="nav-tile"><a href="/worlds">Worlds</a></div>
+                <div class="nav-tile"><a href="/shaders">Shaders</a></div>
+                <div class="nav-tile"><a href="/gallery">Gallery</a></div>
+                <div class="nav-tile"><a href="/guides">Guides</a></div>
+                <div class="nav-tile"><a href="/upload">Upload</a></div>
+            </div>
+            <div class="hamburger-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        <div class="mobile-menu">
+            <div class="nav-tile active"><a href="/">Home</a></div>
+            <div class="nav-tile"><a href="/mods">Mods</a></div>
+            <div class="nav-tile"><a href="/textures">Textures</a></div>
+            <div class="nav-tile"><a href="/worlds">Worlds</a></div>
+            <div class="nav-tile"><a href="/shaders">Shaders</a></div>
+            <div class="nav-tile"><a href="/gallery">Gallery</a></div>
+            <div class="nav-tile"><a href="/guides">Guides</a></div>
+            <div class="nav-tile"><a href="/upload">Upload</a></div>
+        </div>
+    </nav>
 
-    
+    <div class="main-content">
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <h1 class="hero-title">MineCraft Hub</h1>
+            <p class="hero-subtitle">
+                Discover, download, and share the best Minecraft content. From game-changing mods to stunning texture packs, 
+                beautiful worlds to performance-boosting shaders - everything you need to enhance your Minecraft experience.
+            </p>
+            
+            <div class="search-container">
+                <input type="text" class="search-input" placeholder="Search for mods, textures, worlds, and more..." id="global-search">
+                <button class="search-btn" onclick="performGlobalSearch()">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.35-4.35"></path>
+                    </svg>
+                </button>
+            </div>
+        </section>
+
+        <!-- Featured Content -->
+        <section class="featured-section">
+            <h2 class="featured-title">🔥 Featured Mods</h2>
+            <div class="card-grid">
+                {% for mod in featured_mods %}
+                <div class="mod-card">
+                    <img src="{{ mod.image }}" alt="{{ mod.name }}" class="mod-card-image">
+                    <div class="mod-card-content">
+                        <h3 class="mod-card-title">{{ mod.name }}</h3>
+                        <p class="mod-card-author">by {{ mod.author }}</p>
+                        <p class="mod-card-description">{{ mod.description }}</p>
+                        <div class="mod-card-stats">
+                            <span class="mod-downloads">📥 {{ mod.downloads }} downloads</span>
+                            <span class="mod-version">{{ mod.version }}</span>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            <div style="text-align: center; margin-top: 30px;">
+                <a href="/mods" class="upload-btn">View All Mods →</a>
+            </div>
+        </section>
+
+        <!-- Quick Categories -->
+        <section class="featured-section">
+            <h2 class="featured-title">🎯 Browse Categories</h2>
+            <div class="card-grid">
+                <div class="mod-card">
+                    <img src="https://images.pexels.com/photos/163064/play-stone-network-networked-interactive-163064.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Mods" class="mod-card-image">
+                    <div class="mod-card-content">
+                        <h3 class="mod-card-title">Mods</h3>
+                        <p class="mod-card-description">Enhance your gameplay with thousands of community-created modifications</p>
+                        <div style="margin-top: 16px;">
+                            <a href="/mods" class="filter-btn">Browse Mods</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mod-card">
+                    <img src="https://images.pexels.com/photos/1029604/pexels-photo-1029604.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Texture Packs" class="mod-card-image">
+                    <div class="mod-card-content">
+                        <h3 class="mod-card-title">Texture Packs</h3>
+                        <p class="mod-card-description">Transform your world's appearance with beautiful texture packs</p>
+                        <div style="margin-top: 16px;">
+                            <a href="/textures" class="filter-btn">Browse Textures</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mod-card">
+                    <img src="https://images.pexels.com/photos/442576/pexels-photo-442576.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Worlds" class="mod-card-image">
+                    <div class="mod-card-content">
+                        <h3 class="mod-card-title">Worlds</h3>
+                        <p class="mod-card-description">Explore amazing pre-built worlds and adventure maps</p>
+                        <div style="margin-top: 16px;">
+                            <a href="/worlds" class="filter-btn">Browse Worlds</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Community Stats -->
+        <section class="hero-section" style="text-align: center;">
+            <h2 class="featured-title">🌟 Join Our Community</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; margin-top: 30px;">
+                <div>
+                    <div style="font-size: 2.5rem; font-weight: 800; color: white; margin-bottom: 8px;">50K+</div>
+                    <div style="color: rgba(255, 255, 255, 0.8);">Active Users</div>
+                </div>
+                <div>
+                    <div style="font-size: 2.5rem; font-weight: 800; color: white; margin-bottom: 8px;">15K+</div>
+                    <div style="color: rgba(255, 255, 255, 0.8);">Mods & Resources</div>
+                </div>
+                <div>
+                    <div style="font-size: 2.5rem; font-weight: 800; color: white; margin-bottom: 8px;">1M+</div>
+                    <div style="color: rgba(255, 255, 255, 0.8);">Downloads</div>
+                </div>
+                <div>
+                    <div style="font-size: 2.5rem; font-weight: 800; color: white; margin-bottom: 8px;">24/7</div>
+                    <div style="color: rgba(255, 255, 255, 0.8);">Support</div>
+                </div>
+            </div>
+            <div style="margin-top: 30px;">
+                <a href="/upload" class="upload-btn">Start Contributing →</a>
+            </div>
+        </section>
+    </div>
+</body>
 </html>

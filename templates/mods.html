@@ -1,46 +1,111 @@
 <!DOCTYPE html>
 <html lang="nl">
-     <head>
-           <title>sjabloon</title>
-           <meta charset="utf-8">
-           <meta name="viewport" content="width=device-width, initial-scale=1.0">
-           <link rel="preconnect" href="https://fonts.googleapis.com">
-           <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-           <link href="https://fonts.googleapis.com/css2?family=Doto:wght@100..900&display=swap" rel="stylesheet">
-           <link rel="stylesheet" href="{{ url_for('static', filename='css/opmaak.css') }}">
-           <script src="{{ url_for('static', filename='js/navbar.js') }}" defer></script>
-     </head>
-     <body>
-         <nav class="navbar">
-             <div class="nav-container">
-                 <div class="nav-logo">
-                     <img src="{{ url_for('static', filename='img/logo.png') }}" alt="Logo">
-                 </div>
-                 <div class="nav-links">
-                     <div class="nav-tile"><a href="/">Home</a></div>
-                     <div class="nav-tile active"><a href="/mods">Mods</a></div>
-                     <div class="nav-tile"><a href="/gallery">Gallery</a></div>
-                     <div class="nav-tile"><a href="/textures">Textures</a></div>
-                     <div class="nav-tile"><a href="/worlds">Worlds</a></div>
-                 </div>
-                 <div class="hamburger-menu">
-                     <span></span>
-                     <span></span>
-                     <span></span>
-                 </div>
-             </div>
-             <div class="mobile-menu">
-                 <div class="nav-tile"><a href="/">Home</a></div>
-                 <div class="nav-tile active"><a href="/mods">Mods</a></div>
-                 <div class="nav-tile"><a href="/gallery">Gallery</a></div>
-                 <div class="nav-tile"><a href="/textures">Textures</a></div>
-                 <div class="nav-tile"><a href="/worlds">Worlds</a></div>
-             </div>
-         </nav>
+<head>
+    <title>Mods - MineCraft Hub</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Doto:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/opmaak.css') }}">
+    <script src="{{ url_for('static', filename='js/navbar.js') }}" defer></script>
+    <script src="{{ url_for('static', filename='js/search.js') }}" defer></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="{{ url_for('static', filename='img/logo.png') }}" alt="Logo">
+            </div>
+            <div class="nav-links">
+                <div class="nav-tile"><a href="/">Home</a></div>
+                <div class="nav-tile active"><a href="/mods">Mods</a></div>
+                <div class="nav-tile"><a href="/textures">Textures</a></div>
+                <div class="nav-tile"><a href="/worlds">Worlds</a></div>
+                <div class="nav-tile"><a href="/shaders">Shaders</a></div>
+                <div class="nav-tile"><a href="/gallery">Gallery</a></div>
+                <div class="nav-tile"><a href="/guides">Guides</a></div>
+                <div class="nav-tile"><a href="/upload">Upload</a></div>
+            </div>
+            <div class="hamburger-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        <div class="mobile-menu">
+            <div class="nav-tile"><a href="/">Home</a></div>
+            <div class="nav-tile active"><a href="/mods">Mods</a></div>
+            <div class="nav-tile"><a href="/textures">Textures</a></div>
+            <div class="nav-tile"><a href="/worlds">Worlds</a></div>
+            <div class="nav-tile"><a href="/shaders">Shaders</a></div>
+            <div class="nav-tile"><a href="/gallery">Gallery</a></div>
+            <div class="nav-tile"><a href="/guides">Guides</a></div>
+            <div class="nav-tile"><a href="/upload">Upload</a></div>
+        </div>
+    </nav>
 
-         <div style="padding: 20px;">
-             <h1>Page 2</h1>
-             <p>Hallo</p>
-         </div>
-     </body>
+    <div class="main-content">
+        <div class="section-header">
+            <h1 class="section-title">🔧 Minecraft Mods</h1>
+            <p class="section-subtitle">
+                Discover thousands of community-created modifications to enhance your Minecraft experience. 
+                From performance improvements to completely new gameplay mechanics.
+            </p>
+        </div>
+
+        <!-- Search and Filters -->
+        <div class="filter-section">
+            <div class="search-container" style="margin-bottom: 20px;">
+                <input type="text" class="search-input" placeholder="Search mods..." value="{{ search_query }}" id="mod-search">
+                <button class="search-btn" onclick="searchMods()">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.35-4.35"></path>
+                    </svg>
+                </button>
+            </div>
+            
+            <div class="filter-title">Filter by Category:</div>
+            <div class="filter-buttons">
+                <a href="/mods?category=all" class="filter-btn {% if current_category == 'all' %}active{% endif %}">All</a>
+                <a href="/mods?category=optimization" class="filter-btn {% if current_category == 'optimization' %}active{% endif %}">Optimization</a>
+                <a href="/mods?category=utility" class="filter-btn {% if current_category == 'utility' %}active{% endif %}">Utility</a>
+                <a href="/mods?category=world-generation" class="filter-btn {% if current_category == 'world-generation' %}active{% endif %}">World Gen</a>
+                <a href="/mods?category=technology" class="filter-btn {% if current_category == 'technology' %}active{% endif %}">Technology</a>
+                <a href="/mods?category=magic" class="filter-btn {% if current_category == 'magic' %}active{% endif %}">Magic</a>
+                <a href="/mods?category=adventure" class="filter-btn {% if current_category == 'adventure' %}active{% endif %}">Adventure</a>
+            </div>
+        </div>
+
+        <!-- Mods Grid -->
+        <div class="card-grid">
+            {% for mod in mods %}
+            <div class="mod-card">
+                <img src="{{ mod.image }}" alt="{{ mod.name }}" class="mod-card-image">
+                <div class="mod-card-content">
+                    <h3 class="mod-card-title">{{ mod.name }}</h3>
+                    <p class="mod-card-author">by {{ mod.author }}</p>
+                    <p class="mod-card-description">{{ mod.description }}</p>
+                    <div class="mod-card-stats">
+                        <span class="mod-downloads">📥 {{ mod.downloads }} downloads</span>
+                        <span class="mod-version">{{ mod.version }}</span>
+                    </div>
+                    <div style="margin-top: 16px; display: flex; gap: 8px;">
+                        <a href="/mod/{{ mod.id }}" class="filter-btn" style="flex: 1; text-align: center;">View Details</a>
+                        <button class="upload-btn" style="padding: 8px 16px;">Download</button>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+        {% if not mods %}
+        <div style="text-align: center; padding: 60px 20px;">
+            <h3 style="color: white; font-size: 1.5rem; margin-bottom: 16px;">No mods found</h3>
+            <p style="color: rgba(255, 255, 255, 0.7);">Try adjusting your search terms or filters.</p>
+        </div>
+        {% endif %}
+    </div>
+</body>
 </html>

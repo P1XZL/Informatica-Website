@@ -6,6 +6,7 @@ body {
     background-attachment: fixed;
     margin: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
 }
 
 h1 {
@@ -134,6 +135,281 @@ h1 {
     color: white;
 }
 
+/* Main Content Styles */
+.main-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.hero-section {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 24px;
+    padding: 60px 40px;
+    text-align: center;
+    margin-bottom: 40px;
+    box-shadow: 
+        0 8px 32px rgba(0, 0, 0, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    font-weight: 900;
+    color: white;
+    margin-bottom: 20px;
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    font-family: 'Doto', sans-serif;
+}
+
+.hero-subtitle {
+    font-size: 1.3rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+.search-container {
+    max-width: 600px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.search-input {
+    width: 100%;
+    padding: 18px 60px 18px 24px;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    color: white;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.search-input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.search-input:focus {
+    outline: none;
+    border-color: rgba(255, 255, 255, 0.4);
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+}
+
+.search-btn {
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    border-radius: 12px;
+    padding: 12px 16px;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.search-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateY(-50%) scale(1.05);
+}
+
+/* Card Styles */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 24px;
+    margin-top: 40px;
+}
+
+.mod-card {
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 20px;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 
+        0 8px 32px rgba(0, 0, 0, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.mod-card:hover {
+    transform: translateY(-8px);
+    background: rgba(255, 255, 255, 0.18);
+    border-color: rgba(255, 255, 255, 0.3);
+    box-shadow: 
+        0 20px 40px rgba(0, 0, 0, 0.3),
+        0 8px 16px rgba(0, 0, 0, 0.15),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.mod-card-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.mod-card:hover .mod-card-image {
+    transform: scale(1.05);
+}
+
+.mod-card-content {
+    padding: 24px;
+}
+
+.mod-card-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 8px;
+    font-family: 'Doto', sans-serif;
+}
+
+.mod-card-author {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+    margin-bottom: 12px;
+}
+
+.mod-card-description {
+    color: rgba(255, 255, 255, 0.85);
+    line-height: 1.5;
+    margin-bottom: 16px;
+}
+
+.mod-card-stats {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.mod-downloads {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.9rem;
+}
+
+.mod-version {
+    background: rgba(255, 255, 255, 0.15);
+    color: white;
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+/* Filter Styles */
+.filter-section {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 16px;
+    padding: 20px;
+    margin-bottom: 30px;
+}
+
+.filter-title {
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 16px;
+    font-family: 'Doto', sans-serif;
+}
+
+.filter-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.filter-btn {
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: rgba(255, 255, 255, 0.9);
+    padding: 8px 16px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+    background: rgba(255, 255, 255, 0.25);
+    border-color: rgba(255, 255, 255, 0.4);
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* Section Headers */
+.section-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: white;
+    margin-bottom: 16px;
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    font-family: 'Doto', sans-serif;
+}
+
+.section-subtitle {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.8);
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* Featured Section */
+.featured-section {
+    margin-bottom: 60px;
+}
+
+.featured-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 24px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    font-family: 'Doto', sans-serif;
+}
+
+/* Upload Button */
+.upload-btn {
+    background: linear-gradient(135deg, rgba(76, 175, 80, 0.8), rgba(56, 142, 60, 0.8));
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+    padding: 12px 24px;
+    border-radius: 16px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: inline-block;
+    backdrop-filter: blur(10px);
+}
+
+.upload-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(76, 175, 80, 0.3);
+    background: linear-gradient(135deg, rgba(76, 175, 80, 0.9), rgba(56, 142, 60, 0.9));
+}
+
 /* Hamburger Menu Styles */
 .hamburger-menu {
     display: none;
@@ -241,6 +517,23 @@ h1 {
     body {
         padding-top: 90px;
     }
+    
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .hero-section {
+        padding: 40px 20px;
+    }
+    
+    .card-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+    
+    .main-content {
+        padding: 15px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -270,32 +563,40 @@ h1 {
     body {
         padding-top: 85px;
     }
+    
+    .hero-title {
+        font-size: 2rem;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
 }
 
 /* Add padding to body to account for fixed navbar */
 body {
     padding-top: 110px;
 }
+
 #logo-container {
-  position: relative;
-  width: 100px;  /* Adjust size as needed */
-  height: 100px;
+    position: relative;
+    width: 100px;
+    height: 100px;
 }
 
 #logo {
-  width: 100%;
-  height: 100%;
-  display: block;
+    width: 100%;
+    height: 100%;
+    display: block;
 }
 
 #fog {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: white;
-  opacity: 0.3;  /* Adjust fog intensity */
-  pointer-events: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: white;
+    opacity: 0.3;
+    pointer-events: none;
 }
-

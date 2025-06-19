@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <title>Guides - MineCraft Hub</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Doto:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/opmaak.css') }}">
+    <script src="{{ url_for('static', filename='js/navbar.js') }}" defer></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="{{ url_for('static', filename='img/logo.png') }}" alt="Logo">
+            </div>
+            <div class="nav-links">
+                <div class="nav-tile"><a href="/">Home</a></div>
+                <div class="nav-tile"><a href="/mods">Mods</a></div>
+                <div class="nav-tile"><a href="/textures">Textures</a></div>
+                <div class="nav-tile"><a href="/worlds">Worlds</a></div>
+                <div class="nav-tile"><a href="/shaders">Shaders</a></div>
+                <div class="nav-tile"><a href="/gallery">Gallery</a></div>
+                <div class="nav-tile active"><a href="/guides">Guides</a></div>
+                <div class="nav-tile"><a href="/upload">Upload</a></div>
+            </div>
+            <div class="hamburger-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        <div class="mobile-menu">
+            <div class="nav-tile"><a href="/">Home</a></div>
+            <div class="nav-tile"><a href="/mods">Mods</a></div>
+            <div class="nav-tile"><a href="/textures">Textures</a></div>
+            <div class="nav-tile"><a href="/worlds">Worlds</a></div>
+            <div class="nav-tile"><a href="/shaders">Shaders</a></div>
+            <div class="nav-tile"><a href="/gallery">Gallery</a></div>
+            <div class="nav-tile active"><a href="/guides">Guides</a></div>
+            <div class="nav-tile"><a href="/upload">Upload</a></div>
+        </div>
+    </nav>
+
+    <div class="main-content">
+        <div class="section-header">
+            <h1 class="section-title">📚 Guides & Tutorials</h1>
+            <p class="section-subtitle">
+                Learn how to install mods, optimize your game, create content, and master Minecraft modding 
+                with our comprehensive guides and tutorials.
+            </p>
+        </div>
+
+        <!-- Guide Categories -->
+        <div class="card-grid">
+            <div class="mod-card">
+                <img src="https://images.pexels.com/photos/163064/play-stone-network-networked-interactive-163064.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Installation Guide" class="mod-card-image">
+                <div class="mod-card-content">
+                    <h3 class="mod-card-title">🔧 Installation Guides</h3>
+                    <p class="mod-card-description">Step-by-step instructions for installing mods, texture packs, and shaders safely</p>
+                    <div style="margin-top: 16px;">
+                        <button class="filter-btn" style="width: 100%;">View Guides</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mod-card">
+                <img src="https://images.pexels.com/photos/442576/pexels-photo-442576.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Performance Guide" class="mod-card-image">
+                <div class="mod-card-content">
+                    <h3 class="mod-card-title">⚡ Performance Optimization</h3>
+                    <p class="mod-card-description">Tips and tricks to improve your Minecraft performance and reduce lag</p>
+                    <div style="margin-top: 16px;">
+                        <button class="filter-btn" style="width: 100%;">View Guides</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mod-card">
+                <img src="https://images.pexels.com/photos/1029604/pexels-photo-1029604.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Modding Guide" class="mod-card-image">
+                <div class="mod-card-content">
+                    <h3 class="mod-card-title">🛠️ Creating Content</h3>
+                    <p class="mod-card-description">Learn how to create your own mods, texture packs, and worlds</p>
+                    <div style="margin-top: 16px;">
+                        <button class="filter-btn" style="width: 100%;">View Guides</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mod-card">
+                <img src="https://images.pexels.com/photos/163064/play-stone-network-networked-interactive-163064.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Troubleshooting" class="mod-card-image">
+                <div class="mod-card-content">
+                    <h3 class="mod-card-title">🔍 Troubleshooting</h3>
+                    <p class="mod-card-description">Common issues and solutions for modded Minecraft problems</p>
+                    <div style="margin-top: 16px;">
+                        <button class="filter-btn" style="width: 100%;">View Guides</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mod-card">
+                <img src="https://images.pexels.com/photos/442576/pexels-photo-442576.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Server Setup" class="mod-card-image">
+                <div class="mod-card-content">
+                    <h3 class="mod-card-title">🌐 Server Setup</h3>
+                    <p class="mod-card-description">How to set up and manage modded Minecraft servers</p>
+                    <div style="margin-top: 16px;">
+                        <button class="filter-btn" style="width: 100%;">View Guides</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mod-card">
+                <img src="https://images.pexels.com/photos/1029604/pexels-photo-1029604.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Best Practices" class="mod-card-image">
+                <div class="mod-card-content">
+                    <h3 class="mod-card-title">✨ Best Practices</h3>
+                    <p class="mod-card-description">Tips for organizing mods, backing up worlds, and staying safe</p>
+                    <div style="margin-top: 16px;">
+                        <button class="filter-btn" style="width: 100%;">View Guides</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Popular Guides Section -->
+        <section class="featured-section">
+            <h2 class="featured-title">🔥 Popular Guides</h2>
+            <div class="hero-section">
+                <div style="text-align: left; max-width: 800px; margin: 0 auto;">
+                    <div style="margin-bottom: 30px; padding: 20px; background: rgba(255, 255, 255, 0.1); border-radius: 16px;">
+                        <h3 style="color: white; margin-bottom: 10px;">📦 How to Install Forge Mods</h3>
+                        <p style="color: rgba(255, 255, 255, 0.8); margin-bottom: 15px;">Complete beginner's guide to installing Minecraft Forge and your first mods</p>
+                        <div style="display: flex; gap: 10px; align-items: center;">
+                            <span style="color: rgba(255, 255, 255, 0.6); font-size: 0.9rem;">⏱️ 5 min read</span>
+                            <span style="color: rgba(255, 255, 255, 0.6); font-size: 0.9rem;">👁️ 15.2K views</span>
+                        </div>
+                    </div>
+
+                    <div style="margin-bottom: 30px; padding: 20px; background: rgba(255, 255, 255, 0.1); border-radius: 16px;">
+                        <h3 style="color: white; margin-bottom: 10px;">🎨 Installing Texture Packs & Shaders</h3>
+                        <p style="color: rgba(255, 255, 255, 0.8); margin-bottom: 15px;">Transform your Minecraft visuals with texture packs and OptiFine shaders</p>
+                        <div style="display: flex; gap: 10px; align-items: center;">
+                            <span style="color: rgba(255, 255, 255, 0.6); font-size: 0.9rem;">⏱️ 8 min read</span>
+                            <span style="color: rgba(255, 255, 255, 0.6); font-size: 0.9rem;">👁️ 12.8K views</span>
+                        </div>
+                    </div>
+
+                    <div style="margin-bottom: 30px; padding: 20px; background: rgba(255, 255, 255, 0.1); border-radius: 16px;">
+                        <h3 style="color: white; margin-bottom: 10px;">⚡ Optimizing Minecraft Performance</h3>
+                        <p style="color: rgba(255, 255, 255, 0.8); margin-bottom: 15px;">Boost your FPS and reduce lag with these proven optimization techniques</p>
+                        <div style="display: flex; gap: 10px; align-items: center;">
+                            <span style="color: rgba(255, 255, 255, 0.6); font-size: 0.9rem;">⏱️ 12 min read</span>
+                            <span style="color: rgba(255, 255, 255, 0.6); font-size: 0.9rem;">👁️ 9.5K views</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
