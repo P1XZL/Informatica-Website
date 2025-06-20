@@ -453,7 +453,7 @@ h1 {
     backdrop-filter: blur(25px) saturate(200%);
     -webkit-backdrop-filter: blur(25px) saturate(200%);
     border: 1px solid rgba(255, 255, 255, 0.18);
-    border-radius: 16px;
+    border-radius: 24px;
     padding: 15px 0;
     box-shadow: 
         0 8px 32px rgba(0, 0, 0, 0.3),
@@ -493,44 +493,44 @@ h1 {
         top: 10px;
         position: fixed;
     }
-    
+
     .nav-container {
         padding: 0 20px;
     }
-    
+
     .nav-links {
         display: none;
     }
-    
+
     .hamburger-menu {
         display: flex;
     }
-    
+
     .nav-logo img {
         height: 40px;
     }
-    
+
     .mobile-menu {
         margin-top: 5px;
     }
-    
+
     body {
         padding-top: 90px;
     }
-    
+
     .hero-title {
         font-size: 2.5rem;
     }
-    
+
     .hero-section {
         padding: 40px 20px;
     }
-    
+
     .card-grid {
         grid-template-columns: 1fr;
         gap: 16px;
     }
-    
+
     .main-content {
         padding: 15px;
     }
@@ -542,32 +542,32 @@ h1 {
         top: 5px;
         position: fixed;
     }
-    
+
     .nav-container {
         padding: 0 15px;
     }
-    
+
     .nav-logo img {
         height: 35px;
     }
-    
+
     .mobile-menu {
         width: calc(100% - 5px);
         margin-top: 5px;
     }
-    
+
     .mobile-menu .nav-tile {
         margin: 6px 12px;
     }
-    
+
     body {
         padding-top: 85px;
     }
-    
+
     .hero-title {
         font-size: 2rem;
     }
-    
+
     .section-title {
         font-size: 2rem;
     }
@@ -599,4 +599,31 @@ body {
     background: white;
     opacity: 0.3;
     pointer-events: none;
+}
+
+.glass-devider {
+    max-width: 1200px;
+    max-height: 100px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 24px;
+    padding: 60px 10px;
+    text-align: center;
+    margin-bottom: 40px;
+    box-shadow: 
+        0 8px 32px rgba(0, 0, 0, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+
+.devider-title {
+    font-size: 2.0rem;
+    font-weight: 900;
+    color: white;
+    text-align: center;
+    margin-bottom: 20px;
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    font-family: 'Doto', sans-serif;
 }
