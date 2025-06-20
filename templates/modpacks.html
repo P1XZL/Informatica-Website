@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <title>Modpacks - Pyrite</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Doto:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/opmaak.css') }}">
+    <script src="{{ url_for('static', filename='js/navbar.js') }}" defer></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="{{ url_for('static', filename='img/logo.png') }}" alt="Logo">
+            </div>
+            <div class="nav-links">
+                <div class="nav-tile"><a href="/">Home</a></div>
+                <div class="nav-tile"><a href="/mods">Mods</a></div>
+                <div class="nav-tile"><a href="/gallery">Gallery</a></div>
+                <div class="nav-tile"><a href="/textures">Textures</a></div>
+                <div class="nav-tile"><a href="/worlds">Worlds</a></div>
+                <div class="nav-tile"><a href="/shaders">Shaders</a></div>
+                <div class="nav-tile active"><a href="/modpacks">Modpacks</a></div>
+            </div>
+            <div class="hamburger-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        <div class="mobile-menu">
+            <div class="nav-tile"><a href="/">Home</a></div>
+            <div class="nav-tile"><a href="/mods">Mods</a></div>
+            <div class="nav-tile"><a href="/gallery">Gallery</a></div>
+            <div class="nav-tile"><a href="/textures">Textures</a></div>
+            <div class="nav-tile"><a href="/worlds">Worlds</a></div>
+            <div class="nav-tile"><a href="/shaders">Shaders</a></div>
+            <div class="nav-tile active"><a href="/modpacks">Modpacks</a></div>
+        </div>
+    </nav>
+
+    <div class="main-content">
+        <div class="section-header">
+            <h1 class="section-title">📦 Modpacks</h1>
+            <p class="section-subtitle">
+                Discover curated collections of mods that work perfectly together. 
+                Experience Minecraft in completely new ways with these carefully crafted modpack experiences.
+            </p>
+        </div>
+
+        <!-- Coming Soon Section -->
+        <div class="hero-section" style="text-align: center;">
+            <h2 style="color: white; font-size: 2rem; margin-bottom: 20px;">🚧 Coming Soon!</h2>
+            <p style="color: rgba(255, 255, 255, 0.8); font-size: 1.1rem; margin-bottom: 30px;">
+                We're working hard to bring you the best curated modpack collections. 
+                This section will feature performance-tested modpacks, themed adventures, 
+                and complete gameplay overhauls.
+            </p>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 40px;">
+                <div style="background: rgba(255, 255, 255, 0.1); padding: 20px; border-radius: 16px;">
+                    <h3 style="color: white; margin-bottom: 10px;">🏭 Tech & Industry</h3>
+                    <p style="color: rgba(255, 255, 255, 0.7);">Automation, machinery, and technological advancement</p>
+                </div>
+                <div style="background: rgba(255, 255, 255, 0.1); padding: 20px; border-radius: 16px;">
+                    <h3 style="color: white; margin-bottom: 10px;">🧙‍♂️ Magic & Fantasy</h3>
+                    <p style="color: rgba(255, 255, 255, 0.7);">Spells, wizardry, and mystical adventures</p>
+                </div>
+                <div style="background: rgba(255, 255, 255, 0.1); padding: 20px; border-radius: 16px;">
+                    <h3 style="color: white; margin-bottom: 10px;">🌍 Exploration</h3>
+                    <p style="color: rgba(255, 255, 255, 0.7);">New dimensions, biomes, and worlds to discover</p>
+                </div>
+                <div style="background: rgba(255, 255, 255, 0.1); padding: 20px; border-radius: 16px;">
+                    <h3 style="color: white; margin-bottom: 10px;">⚡ Performance</h3>
+                    <p style="color: rgba(255, 255, 255, 0.7);">Optimized packs for smooth gameplay</p>
+                </div>
+            </div>
+            <div style="margin-top: 30px;">
+                <a href="/upload" class="upload-btn">Submit Your Modpack</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

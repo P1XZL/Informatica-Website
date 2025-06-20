@@ -24,6 +24,8 @@
                      <div class="nav-tile"><a href="/gallery">Gallery</a></div>
                      <div class="nav-tile"><a href="/textures">Textures</a></div>
                      <div class="nav-tile"><a href="/worlds">Worlds</a></div>
+                     <div class="nav-tile"><a href="/shaders">Shaders</a></div>
+                     <div class="nav-tile"><a href="/modpacks">Modpacks</a></div>
                  </div>
                  <div class="hamburger-menu">
                      <span></span>
@@ -37,6 +39,8 @@
                  <div class="nav-tile"><a href="/gallery">Gallery</a></div>
                  <div class="nav-tile"><a href="/textures">Textures</a></div>
                  <div class="nav-tile"><a href="/worlds">Worlds</a></div>
+                 <div class="nav-tile"><a href="/shaders">Shaders</a></div>
+                 <div class="nav-tile"><a href="/modpacks">Modpacks</a></div>
              </div>
          </nav>
      </body>
@@ -94,34 +98,34 @@
                 </div>
 <!-- Gallery tile -->
                 <div class="mod-card">
-                    <img src="{{ url_for('static', filename='img/gallery.png') }}" alt="Worlds" class="mod-card-image">
+                    <img src="{{ url_for('static', filename='img/gallery.png') }}" alt="Gallery" class="mod-card-image">
                     <div class="mod-card-content">
                         <h3 class="mod-card-title">Gallery</h3>
                         <p class="mod-card-description">Get to know a little more about the game</p>
                         <div style="margin-top: 16px;">
-                            <a href="/worlds" class="filter-btn">Browse Gallery</a>
+                            <a href="/gallery" class="filter-btn">Browse Gallery</a>
                         </div>
                     </div>
                 </div>
 <!-- Shaders -->
                 <div class="mod-card">
-                    <img src="{{ url_for('static', filename='img/shaders.png') }}" alt="Worlds" class="mod-card-image">
+                    <img src="{{ url_for('static', filename='img/shaders.png') }}" alt="Shaders" class="mod-card-image">
                     <div class="mod-card-content">
                         <h3 class="mod-card-title">Shaders</h3>
                         <p class="mod-card-description">Give your game a facelift with shaders</p>
                         <div style="margin-top: 16px;">
-                            <a href="/worlds" class="filter-btn">Browse Shaders</a>
+                            <a href="/shaders" class="filter-btn">Browse Shaders</a>
                         </div>
                     </div>
                 </div>
 <!-- Modpacks -->
                 <div class="mod-card">
-                    <img src="{{ url_for('static', filename='img/modpacks.png') }}" alt="Worlds" class="mod-card-image">
+                    <img src="{{ url_for('static', filename='img/modpacks.png') }}" alt="Modpacks" class="mod-card-image">
                     <div class="mod-card-content">
                         <h3 class="mod-card-title">Modpacks</h3>
                         <p class="mod-card-description">Relive Minecraft in a new way</p>
                         <div style="margin-top: 16px;">
-                            <a href="/worlds" class="filter-btn">Browse Modpacks</a>
+                            <a href="/modpacks" class="filter-btn">Browse Modpacks</a>
                         </div>
                     </div>
                 </div>
